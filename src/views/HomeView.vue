@@ -1,18 +1,29 @@
 <template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-  </div>
+  <div class="home text-center">
+   <article v-for="article in articles">
+     
+        <router-link  :to="`/article/${article.slug}`">
+     <h2>{{article.title}}</h2>
+  </router-link>
+     <p>{{article.description}} <router-link  :to="`/article/${article.slug}`">+more</router-link></p>
+      <hr class="mb-5"/>
+   </article>
+  
+  </div> 
+ 
 </template>
 
-<script>
-// @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
 
+<script>
 export default {
   name: 'HomeView',
-  components: {
-    HelloWorld
+  data(){
+    let articleslist=localStorage.getItem("articles")
+    articleslist = JSON.parse(articleslist)
+
+      return {
+        articles:articleslist 
+      }
   }
 }
 </script>

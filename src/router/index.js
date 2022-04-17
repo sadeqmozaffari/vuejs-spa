@@ -6,11 +6,23 @@ import ProfileViewVue from '@/views/ProfileView.vue'
 import loginVue from '@/views/login.vue'
 import logoutView from '@/views/logout.vue'
 import RegisterVue from '@/views/Register.vue'
+import DetailsView from '@/views/Details.vue'
+import Add from '@/views/Add.vue'
 const routes = [
   {
     path: '/',
     name: 'home',
     component: HomeView
+  },
+  {
+    path: '/add',
+    name: 'Add',
+    component: Add
+  },
+  {
+    path: '/article/:slug',
+    name: 'DetailsView',
+    component: DetailsView
   },
   {
     path: '/register',

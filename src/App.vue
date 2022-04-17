@@ -1,7 +1,7 @@
 <template>
 <Navbar class="mb-5"/>
   <!-- {{$store.state}} -->
-  <router-view class="container"/>
+  <router-view class=""/>
 </template>
 <script>
 import Navbar from '@/components/Navbar.vue'
